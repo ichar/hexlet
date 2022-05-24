@@ -1,0 +1,58 @@
+import os
+from functions import get_function
+
+get = get_function()
+
+# BEGIN (write your solution here)
+hash = {
+    'name' : 'karo',
+    'login' : 'mkaro',
+    'email' : 'something',
+    'empty' : '' 
+}
+values= (('name', 'karo'),('email', 'something'),('address', '...'),('empty', ''))
+
+for key, value in values:
+    x=get(hash, key, '...')
+    msg = f">>>error : {os.environ['FUNCTION_VERSION']} : with key {key} : {x} | {value}"
+
+    if  x != value:
+        #print(msg)
+        raise Exception(msg)
+
+# END
+------
+import os
+from functions import get_function
+
+get = get_function()
+
+# BEGIN (write your solution here)
+hash = {
+    'name' : 'karo',
+    'login' : 'mkaro',
+    'email' : 'something',
+    'empty' : '' 
+}
+values= (('name', 'karo'),('email', 'something'),('address', '...'),('empty', ''))
+
+for key, value in values:
+    x=get(hash, key, '...')
+    msg = f">>>error : {os.environ['FUNCTION_VERSION']} : with key {key} : {x} | {value}"
+    #print(msg)
+    if  x != value:
+        #raise Exception(msg)
+        raise Exception('Функция работает неверно!')
+
+print('Все тесты пройдены!')
+-------
+if get(hash, 'name', None) != 'karo':
+    raise Exception('Функция работает неверно!')
+if get({}, 'address', '...') != '...':
+    raise Exception('Функция работает неверно!')
+if get(hash, "email", "...") != "something":
+    raise Exception('Функция работает неверно!')
+
+print('Все тесты пройдены!')
+
+# END
