@@ -1,4 +1,7 @@
+import sys
+
 IsTrace=0
+
 def triangle(n):
   line = []
   if n > 4:
@@ -24,5 +27,21 @@ def triangle(n):
                 line.append(sum(line[0:index-1])+1)
   return line
 
-for x in range(1,15):
-    print(triangle(x))
+
+if __name__ == "__main__":
+    argv = sys.argv
+
+    if len(argv) == 1 or argv[1].lower() in ('/h', '-h', 'help', '--help', '/?'):
+        print('--> Triangle script')
+        print('--> ')
+        print('--> python3 triangle.py [line]')
+        print('--> line is an integer number>0, by default=15')
+        print('--> ')
+        print('--> ')
+    else:
+        arg = argv[1]
+        assert arg.isdigit() == True
+        line = int(arg)
+
+        for x in range(1,line):
+            print(triangle(x))
