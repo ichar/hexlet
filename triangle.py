@@ -1,5 +1,7 @@
 import sys
 
+# https://ru.hexlet.io/challenges/python_lists_pascal_triangle_exercise
+
 IsTrace=0
 
 def triangle(n):

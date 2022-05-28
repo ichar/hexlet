@@ -1,3 +1,4 @@
+# https://ru.hexlet.io/challenges/python_lists_enlarge_image_exercise
 def show(image):
     for line in image:
         print(line)
