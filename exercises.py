@@ -1,3 +1,23 @@
+# BEGIN (write your solution here)
+def is_continuous_sequence(data):
+    if len(data) < 2:
+        return False
+    w = data[0]
+    next = -1
+    if isinstance(w, int) or w.isdigit():
+        next = int(w)
+    try:
+        for x in data:
+            if int(x) == next:
+                next += 1
+            else:
+                return False
+    except:
+        return False
+    return True
+
+# END
+
 def rotated_left(s):
     return s[1:]+s[0:1]
 
@@ -87,11 +107,16 @@ def triangle(n, back=0):
         return line
     else:
         return '%s:%s' % (n,' '.join([str(x)for x in line]))
-    
-print(triangle(0))
-print(triangle(1))
-print(triangle(2))
-print(triangle(3))
-print(triangle(4))
-print(triangle(5))
-#print(triangle(6))
+
+if __name__ == "__main__":
+    print(is_continuous_sequence((1,2,3,4,5,6,7)))
+
+    """
+    print(triangle(0))
+    print(triangle(1))
+    print(triangle(2))
+    print(triangle(3))
+    print(triangle(4))
+    print(triangle(5))
+    print(triangle(6))
+    """
