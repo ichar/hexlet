@@ -120,3 +120,18 @@ if __name__ == "__main__":
     print(triangle(5))
     print(triangle(6))
     """
+
+#https://ru.hexlet.io/courses/python-dicts/lessons/operations-on-sets/exercise_unit
+def diff_keys(d1, d2):
+    old = set(d1.keys())
+    new = set(d2.keys())
+    return {
+        'kept' : old & new,
+        'added' : new - old,
+        'removed' : old - new,
+    }
+    
+new = {'velocity': 2.5, 'x': 100, 'y': 200}
+old = {'x': 100, 'y': 200, 'z': 105}
+diff_keys(new, old)
+#>>> {'kept': {'y', 'x'}, 'added': {'z'}, 'removed': {'velocity'}}
