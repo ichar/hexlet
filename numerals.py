@@ -83,6 +83,8 @@ def test_to_roman():
     assert to_roman(3000) == 'MMM'
 
 
+test_to_roman()
+
 def test_to_arabic():
     assert to_arabic('') == 0
     assert to_arabic('I') == 1
@@ -104,3 +106,5 @@ def test_to_arabic():
     assert to_arabic('MMM') == 3000
     assert to_arabic('IIII') is False
     assert to_arabic('VX') is False
+
+test_to_arabic()
